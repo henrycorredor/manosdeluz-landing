@@ -1,0 +1,63 @@
+---
+import {Image} from "astro:assets";
+import Tabs from "../utils/Tabs.astro"
+
+import cartones from "../../assets/amuletos/amuletos-cartones.png"
+import african from "../../assets/amuletos/amuletos-african.png"
+import money_attraction from "../../assets/amuletos/amuletos-money-attraction.png"
+import san_miguel from "../../assets/amuletos/amuletos-san-miguel.png"
+import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
+---
+
+<section>
+  <div class="container">
+    <Tabs id="tabs-amuletos">
+      <div slot="nav-title" class="amuletos-title">
+        <h1>Amuletos</h1>
+        <h2>Contra - resguardo</h2>
+        <p>Por docena</p>
+      </div>
+      <div slot="tab-element" data-label="Amuletos" class="tab-content">
+        <Image src={cartones} alt="Amuletos - Cartones"/>
+      </div>
+      <div slot="tab-element" data-label="7 African Powers" class="tab-content">
+        <Image src={african} alt="Amuletos - Cartones"/>
+      </div>
+      <div slot="tab-element" data-label="Money Attraction" class="tab-content">
+        <Image src={money_attraction} alt="Amuletos - Cartones"/>
+      </div>
+      <div slot="tab-element" data-label="San Miguel" class="tab-content">
+        <Image src={san_miguel} alt="Amuletos - Cartones"/>
+      </div>
+      <div slot="tab-element" data-label="Against envy and evil eye" class="tab-content">
+        <Image src={evil_eye} alt="Amuletos - Cartones"/>
+      </div>
+    </Tabs>
+  </div>
+</section>
+
+<style lang="less">
+  section{
+    background: url("../../assets/amuletos/amuletos-bkg.jpg") no-repeat center center;
+    background-size: cover;
+    .container{
+      padding: 4rem 1rem;
+    }
+  }
+
+  .amuletos-title{
+    background: url("../../assets/amuletos/amuletos-title.svg") no-repeat center right;
+    background-size: contain ;
+    height: 7rem;
+    min-width: 20rem;
+    margin-bottom: 1rem;
+    h1, h2, p{
+      display: none;
+    }
+  }
+
+  .tab-content{
+    width: 100%;
+    text-align: center;
+  }
+</style>

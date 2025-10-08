@@ -1,0 +1,80 @@
+---
+import {Image} from "astro:assets"
+
+import StMichael from "../../assets/feromonas2/st-michael.png"
+import SexualAttraction from "../../assets/feromonas2/sexual-atraction.png"
+import Mattress from "../../assets/feromonas2/matress-breaker.png"
+import Quita from "../../assets/feromonas2/quita-calzon.png"
+import ComeToMe from "../../assets/feromonas2/come-to-me.png"
+import GiveMeTheCheck from "../../assets/feromonas2/give-me-the-check.png"
+
+const pics = [
+  [StMichael, "St. Michael - picture"],
+  [SexualAttraction, "Sexual Attraction - picture"],
+  [Mattress, "Mattress Breaker - picture"],
+  [Quita, "Quita Calzón - picture"],
+  [ComeToMe, "Come to Me - picture"],
+  [GiveMeTheCheck, "Give me the Check - picture"]
+]
+---
+
+<section>
+  <div class="container flex">
+    <div class="content_data">
+      <h1>Feromonas en fragancia pura</h1>
+      <p>Cada fragancia está diseñada para intensificar tu intención: ya sea protección, atracción sexual, dominio o
+        prosperidad.</p>
+      <p><strong>Úsalas con fe, actitud... y prepárate para lo que viene.</strong></p>
+    </div>
+    <div class="content_pictures flex">
+      {pics.map((item) => (
+          <div class="content_pictures_item">
+            <Image src={item[0]} alt={item[1]}/>
+          </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+<style lang="less">
+  section {
+    background: #575756;
+    background: linear-gradient(180deg, rgba(87, 87, 86, 1) 0%, rgba(87, 87, 86, 1) 50%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 1) 100%);
+  }
+
+  .container {
+    flex-direction: row-reverse;
+    align-items: stretch;
+    gap: 2rem;
+  }
+
+  .content {
+    &_data {
+      min-width: 25%;
+      width: 25%;
+      padding: 1.5rem;
+
+      h1 {
+        display: flex;
+        align-items: center;
+        height: 50%;
+        margin: 0;
+        text-align: center;
+        color: white;
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+      }
+    }
+
+    &_pictures {
+      gap: 2rem;
+
+      &_item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+</style>

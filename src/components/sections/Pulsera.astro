@@ -1,0 +1,139 @@
+---
+import {Image} from "astro:assets"
+import PulseraEnMano from "../../assets/pulsera/pulsera-en-mano.jpg"
+import Pulsera from "../../assets/pulsera/pulsera-siete-nudos.png"
+
+import Modelo from "../../assets/camandula/camandula-modelo.jpg"
+import Camandula from "../../assets/camandula/camandula.jpg";
+---
+
+<section class="pulsera">
+  <div class="container">
+    <h1>Pulsera siete nudos</h1>
+    <div class="content flex">
+      <div class="content_picture">
+        <div class="content_picture_img">
+          <Image src={PulseraEnMano} alt="Pulsera - Modelo"/>
+        </div>
+        <h2>Se venden por docena</h2>
+      </div>
+      <div class="content_legend">
+        <p>La pulsera de 7 nudos es un amuleto de protección que busca alejar las malas energías y atraen la buena
+          suerte, la buena fortuna y la prosperidad. Se cree que cada uno de los siete nudos representa una intención o
+          una petición positiva para el bienestar, como la protección contra el mal de ojo o la conexión espiritual. Se
+          debe colocar en la mano izquierda, ya que se considera el lado receptor de energía, y debe ser llevada hasta
+          que se caiga sola para que cumpla su propósito.</p>
+        <div class="content_legend_img">
+          <Image src={Pulsera} alt="Pulsera siete nudos"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="camandula">
+  <div class="container">
+    <h1>Camándula, Rosario, Escapulario</h1>
+    <div class="content flex">
+      <div class="content_legend">
+        <p>La camándula (también conocida como rosario) es una herramienta de oración que simboliza la conexión con la
+          fe
+          y la devoción a Dios y la Virgen María, siendo un medio para enfocar la meditación, fortalecer la fe y
+          acercarse
+          a lo divino.</p>
+        <p>Además, brinda protección espiritual y energética, actuando omo un escudo de luz frente a las energías
+          negativas</p>
+      </div>
+      <div class="content_picture">
+        <div class="content_picture_img">
+          <Image src={Camandula} alt="Camandula"/>
+        </div>
+        <div class="content_picture_legend">
+          <h2>Se venden por docena</h2>
+        </div>
+      </div>
+      <div class="content_model">
+        <Image src={Modelo} alt="Modelo"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="less">
+  section {
+    color: #575756;
+
+    &.pulsera {
+      background: #dcdcdc;
+    }
+  }
+
+  .container {
+    max-width: 960px;
+  }
+
+  h1, h2 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 1.3rem;
+  }
+
+  .pulsera{
+    .content{
+      &_legend{
+        padding: 0 3rem;
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .content {
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &_picture {
+      width: 30%;
+      min-width: 30%;
+    }
+
+    &_legend {
+      font-size: 1.2rem;
+      &_img {
+        width: 65%;
+        margin: 3rem auto;
+      }
+    }
+  }
+
+  .camandula{
+    .content{
+      gap: 4rem;
+      &_legend{
+        padding-top: 4rem;
+        min-width: 35%;
+        width: 35%;
+      }
+      &_picture{
+        min-width: 20%;
+        width: 20%;
+      }
+      &_model{
+        padding-top: 1rem;
+        min-width: 35%;
+        width: 35%;
+      }
+    }
+  }
+</style>

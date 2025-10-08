@@ -1,0 +1,45 @@
+html, body{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+}
+
+.flex{
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center{
+  justify-content: center;
+}
+
+.flex-column{
+  flex-direction: column;
+}
+
+section .container, footer .container{
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 3rem 1rem;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.section-title{
+  display: block;
+  width: fit-content;
+  margin: 0 auto 2rem;
+  padding: .3rem 4rem .3rem 6rem;
+  text-align: center;
+  border-radius: 100px;
+  color: white;
+  background: #575756 url("../assets/icono-manos-de-luz.svg") no-repeat .5rem center;
+}

@@ -1,0 +1,227 @@
+---
+import Tabs from "../../components/utils/Tabs.astro"
+import {Image} from "astro:assets"
+
+const data = [
+  {
+    title: "7 CHAKRAS",
+    subtitle: "",
+    content: "Perfume que actúa como un potente equilibrador energético, ayudando a que la energía fluya sin bloqueos, elevando la vibración personal y favoreciendo el bienestar físico, emocional y espiritual.",
+    code: "chakras"
+  },
+  {
+    title: "AGAINST ENVY",
+    subtitle: "CONTRA ENVIDIA",
+    content: "El perfume actúa como  una protección energética Se utiliza aplicándolo como fragancia diaria, en rituales de limpieza o en el negocio/hogar para mantener un ambiente protegido y libre de envidias.",
+    code: "against_envy"
+  },
+  {
+    title: "TAMING THE BULLY",
+    subtitle: "AMANSA GUAPOS",
+    content: "Perfume que se usa en rituales de amor, para suavizar corazones rebeldes, atraer la atención de alguien especial o reforzar el dominio en una relación. Se considera un aliado poderoso para el control emocional y el magnetismo amoroso.",
+    code: "taming_the_bully"
+  },
+  {
+    title: "ATRAYENTE FOR MEN",
+    subtitle: "ATRAYENTE PARA HOMBRES",
+    content: "Este perfume se utiliza como herramienta espiritual para quienes buscan enamorar, conquistar o fortalecer el vínculo amoroso con una mujer. Se considera un potente aliado en el terreno sentimental, ya que activa vibraciones de seducción y deseo.",
+    code: "atrayente_for_men"
+  },
+  {
+    title: "ATRAYENTE FOR WOMEN",
+    subtitle: "ATRAYENTE PARA MUJERES",
+    content: "Este perfume se utiliza en rituales y de manera diaria para activar vibraciones de atracción, abrir caminos en el amor. Es considerado un aliado espiritual poderoso para quienes desean atraer el cariño, la pasión o la atención de un hombre.",
+    code: "atrayente_for_women"
+  },
+  {
+    title: "COME TO ME",
+    subtitle: "VEN A MI",
+    content: "Este perfume es considerado un llamador de amor, ideal para quienes buscan que alguien especial regrese o se acerque con más cariño y entrega. También se usa en rituales para endulzar relaciones y generar mayor atracción.",
+    code: "come_to_me"
+  },
+  {
+    title: "ESPUELA DE GALLO",
+    subtitle: "",
+    content: "Este perfume canaliza la energía del guerrero interior, fortaleciendo la masculinidad, el poder personal y el honor. Su esencia vigorosa impulsa la determinación, la confianza y el carácter dominante, atrayendo respeto y admiración. Ideal para hombres que desean proyectar fuerza, liderazgo y magnetismo en cada paso.",
+    code: "espuela_de_gallo"
+  },
+  {
+    title: "FAST LUCK",
+    subtitle: "SUERTE RÁPIDA",
+    content: "El perfume simboliza la apertura inmediata de caminos y la atracción de oportunidades favorables. Se utiliza como fragancia diaria o en rituales cuando se necesita un empuje energético inmediato, sobre todo antes de reuniones, ventas, entrevistas, exámenes o juegos de azar.",
+    code: "fast_luck"
+  },
+  {
+    title: "HEALTH MONEY LOVE",
+    subtitle: "SALUD, DINERO, AMOR",
+    content: "Este perfume es considerado un triángulo perfecto de la buena fortuna, ideal para quienes desean un amuleto energético integral que cubra las áreas más importantes de la vida. Se utiliza como fragancia diaria o en rituales de petición para atraer bienestar en general.",
+    code: "health_money_love"
+  },
+  {
+    title: "HOLY DEATH",
+    subtitle: "SANTA MUERTE",
+    content: "Este perfume está inspirado en la Santa Muerte de 7 colores, símbolo de equilibrio y protección universal. Su esencia invoca energías de salud, sabiduría, amor, justicia, protección y buena suerte, brindando armonía y guía espiritual en todos los aspectos de la vida.",
+    code: "holy_death"
+  },
+  {
+    title: "HONEY OF LOVE",
+    subtitle: "MIEL DE AMOR",
+    content: "Este perfume se utiliza en rituales de amor, reconciliación y como fragancia diaria para irradiar dulzura y atraer vibraciones románticas. Se considera un aliado espiritual poderoso para quienes desean un amor más tierno, estable y duradero.",
+    code: "honey_of_love"
+  },
+  {
+    title: "JALA JALA",
+    subtitle: "",
+    content: "Este perfume atrae energías positivas que favorecen el dinero, el amor y las oportunidades laborales. Su poder vibracional ayuda a abrir caminos de abundancia, prosperidad y éxito, rodeando a quien lo usa con una aura magnética de buena suerte y bienestar.",
+    code: "jala_jala"
+  },
+  {
+    title: "LAW STAY AWAY",
+    subtitle: "ALEJA POLICÍA",
+    content: "Es muy buscado en el mundo esotérico como un perfume de defensa espiritual, ideal para quienes desean sentirse libres de cargas legales o situaciones con la ley.",
+    code: "law_stay_away"
+  },
+  {
+    title: "LOVE SPELL",
+    subtitle: "EMBRUJO DE AMOR",
+    content: "Este perfume despierta el poder del encanto y la seducción, ayudando a hechizar a la pareja y fortalecer los lazos afectivos. Su fragancia envuelve con una energía magnética que inspira deseo, pasión y entrega, creando una conexión irresistible y profunda.",
+    code: "love_spell"
+  },
+  {
+    title: "MONEY ATTRACTION",
+    subtitle: "ATRACCIÓN DE DINERO",
+    content: "Este perfume es ideal para quienes buscan mejorar su situación económica, cerrar negocios exitosos o atraer ingresos inesperados, cargando al usuario con energía de riqueza y prosperidad.",
+    code: "money_attraction"
+  },
+  {
+    title: "OPEN ROAD",
+    subtitle: "ABRE CAMINO",
+    content: "Es ideal para quienes sienten que su vida está estancada o que, por más esfuerzos que hagan, no logran avanzar. Este perfume impulsa el camino hacia la prosperidad, el éxito, la abundancia y la armonía.",
+    code: "open_road"
+  },
+  {
+    title: "PHEROMONES FOR MAN",
+    subtitle: "FEROMONAS PARA HOMBRES",
+    content: "LEste perfume potencia las áreas del amor y la atracción, despertando un magnetismo especial que cautiva al sexo opuesto. Su energía eleva el encanto personal y proyecta una presencia irresistible, haciendo que quien lo usa sea más admirado y deseado.",
+    code: "pheromones_for_man"
+  },
+  {
+    title: "PHEROMONES FOR WOMEN",
+    subtitle: "FREGONAS PARA MUJER",
+    content: "Este perfume potencia las áreas del amor y la atracción, despertando un magnetismo especial que cautiva al sexo opuesto. Su energía eleva el encanto personal y proyecta una presencia irresistible, haciendo que quien lo usa sea más admirado y deseado.",
+    code: "pheromones_for_women"
+  },
+  {
+    title: "POMBA GIRA",
+    subtitle: "",
+    content: "Perfume cargada de la fuerza y el magnetismo de esta poderosa entidad espiritual, reconocida por su dominio en los caminos del amor, la pasión y la seducción.",
+    code: "pomba_gira"
+  },
+  {
+    title: "SAINT MICHAEL",
+    subtitle: "",
+    content: "Perfume espiritual que simboliza protección, justicia divina y fortaleza interior. Inspirado en el poder del arcángel guerrero, se utiliza como un escudo contra energías negativas y como un canal de equilibrio y paz.",
+    code: "saint_michael"
+  },
+  {
+    title: "TIE MAN",
+    subtitle: "ATRAPA HOMBRE",
+    content: "Es una poderosa esencia esotérica utilizada para atraer, conquistar y retener el amor masculino, despertando deseo, interés y compromiso en la persona deseada.",
+    code: "tie_man"
+  },
+  {
+    title: "Legend of the Red Thread",
+    subtitle: "",
+    content: "Este perfume está inspirado en la leyenda del hilo rojo, ayudando a encontrar el amor ideal y a reconectar con el alma gemela. Su energía une espiritualmente a las personas destinadas a encontrarse, fortaleciendo lazos profundos y guiando hacia relaciones marcadas por el destino y la conexión energética.",
+    code: "hilo_rojo"
+  }
+]
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfumes/pic/*.{jpeg,jpg,png,gif}');
+const titles = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfumes/titles/*.{jpeg,jpg,png,gif,svg}');
+---
+
+<section>
+  <div class="container">
+    <h1 class="section-title">Perfumes con Feromonas</h1>
+    <Tabs id="perfumes-tabs">
+      {data.map((perfume) => (
+        <div slot="tab-element"
+             data-label={perfume.title.charAt(0).toUpperCase() + perfume.title.slice(1).toLowerCase()}
+             class="tab-content">
+          <div class="perfume-data-container">
+            <div class="perfume-data-container_pic">
+              <Image src={images[`../../assets/perfumes/pic/${perfume.code}.png`]()}
+                     alt={`Perfume - ${perfume.title}`}/>
+            </div>
+            <div class="perfume-data-container_content">
+              <div class="perfume-data-container_content_title">
+                <h1>
+                  <span>{perfume.title}</span>
+                  <span class="title-picture">
+                    <Image src={titles[`../../assets/perfumes/titles/${perfume.code}.svg`]()} alt={perfume.title}/>
+                  </span>
+                </h1>
+                {perfume.subtitle && <h2>{perfume.subtitle}</h2>}
+              </div>
+
+              <p>{perfume.content}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </Tabs>
+  </div>
+</section>
+
+<style is:global lang="less">
+  #perfumes-tabs {
+    .kl-tabs {
+      &_nav {
+        min-width: 200px;
+
+        button {
+          font-size: .9rem;
+        }
+      }
+
+      &_content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  .perfume-data-container {
+    display: flex;
+
+    h2{
+      color: gray;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    &_content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem;
+
+      &_title {
+        span {
+          img{
+            display: block;
+            max-width: 280px;
+            height: auto;
+            margin: 0 auto;
+          }
+          &:not(.title-picture) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+</style>

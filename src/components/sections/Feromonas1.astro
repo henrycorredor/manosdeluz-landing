@@ -1,0 +1,76 @@
+---
+import {Image} from "astro:assets"
+import TitlePic from "../../assets/feromonas1/feromonas-title.svg"
+import Dollar from "../../assets/feromonas1/pheromones-dollar.png"
+import ForMan from "../../assets/feromonas1/pheromones-for-man.png"
+import ForWoman from "../../assets/feromonas1/pheromones-for-women.png"
+import MoneyAttraction from "../../assets/feromonas1/money-attraction.png"
+import TripleLuck from "../../assets/feromonas1/triple-luck.png"
+
+const pics = [
+  [Dollar, "Feromonas billete del dolar"],
+  [ForMan, "Pheromones for man"],
+  [ForWoman, "Pheromones for woman"],
+  [MoneyAttraction, "Money Attraction"],
+  [TripleLuck, "Triple Luck"],
+]
+---
+
+<section>
+  <div class="container">
+    <h1 class="section-title">Feromonas en francia pura</h1>
+    <div class="content flex">
+      <div class="content_data">
+        <h1>
+          <span>Atracción, poder y energía en cada gota</span>
+          <span class="title-image">
+            <Image src={TitlePic} alt="Atracción, poder y energía en cada gota"/>
+          </span>
+        </h1>
+        <p>
+          Nuestras feromonas en fragancia pura están diseñadas para ptenciar tus intenciones: seducción, abundancia,
+          suerte y conexión personal.
+        </p>
+        <p>
+          Fórmulas concentradas, aromas envolventes y resultados que se sienten.
+        </p>
+        <p><strong>
+          ¡Activa tu magnetismo natural!
+        </strong>
+        </p>
+      </div>
+      <div class="content_pictures">
+        {pics.map((pic) => (<div class="content_pictures_item flex justify-center align-center">
+          <Image src={pic[0]} alt={pic[1]} />
+        </div>))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="less">
+  h1 span {
+    img{
+      width: 100%;
+      height: auto;
+    }
+    &:not(.title-image) {
+      display: none;
+    }
+  }
+
+  .content{
+    gap: 5rem;
+    &_data{
+      width: 20%;
+      min-width: 20%;
+    }
+    &_pictures{
+      display: flex;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+</style>

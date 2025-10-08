@@ -1,0 +1,61 @@
+---
+import { Image } from "astro:assets"
+import LogoWhite from "../assets/manos-de-luz-logo-white.svg"
+import FBLogo from "../assets/social-facebook.svg"
+import INSLogo from "../assets/social-instagram.svg"
+import Whatsapp from "../assets/social-whatsapp.svg"
+---
+
+<nav class="flex">
+  <div class="nav-logo">
+    <Image src={LogoWhite} alt="Manos de Luz - logo" width="130" />
+  </div>
+  <div class="nav-contact flex align-center">
+    <div class="nav-contact_social flex align-center">
+      <div class="nav-contact_social_title">
+        Síguenos:
+      </div>
+      <a href="#"><Image src={FBLogo} alt="Síguenos en Facebook" /></a>
+      <a href="#"><Image src={INSLogo} alt="Síguenos en Instagram" /></a>
+      MdeLuz25
+    </div>
+    <div class="nav-contact_whatsapp flex align-center">
+      <Image src={Whatsapp} alt="Contáctanos en WhatsApp" />
+      +1 (475) 280 1913
+    </div>
+  </div>
+</nav>
+
+<style lang="less">
+  nav{
+    justify-content: space-between;
+    align-items: center;
+    width: calc(98% - 2.4rem);
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    padding: .5rem 1.2rem;
+    border-radius: 100px;
+    background: #575756;
+    transform: translateX(-50%);
+    color: white;
+    z-index: 10;
+  }
+
+  .nav-contact{
+    gap: 2rem;
+
+    img {
+      height: 28px;
+      width: auto;
+    }
+
+    a{
+      line-height: 0;
+    }
+
+    &_social, &_whatsapp{
+      gap: .5rem;
+    }
+  }
+</style>

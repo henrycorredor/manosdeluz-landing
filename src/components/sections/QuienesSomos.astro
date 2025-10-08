@@ -1,0 +1,58 @@
+---
+import Logo from "../../assets/manos-de-luz-logo-gray.svg"
+import {Image} from "astro:assets"
+import Carrousel from "../utils/Carrousel.astro"
+
+import Pic1 from "../../assets/quienes-somos/quienes-somos-1.jpg"
+import Pic2 from "../../assets/quienes-somos/quienes-somos-2.jpg"
+import Pic3 from "../../assets/quienes-somos/quienes-somos-3.jpg"
+---
+
+<section>
+  <div class="container flex align-center">
+    <div class="quienes-somos_picture">
+      <Carrousel imagePaths={[Pic1, Pic2, Pic3]}/>
+    </div>
+    <div class="quienes-somos_content">
+      <h1>Quiénes somos</h1>
+      <p>Descubre nuestra tienda especializada en
+        productos para botánicas en Estados Unidos:
+        camándulas, pulseras, perfumes y artículos de
+        protección, hechos a mano con amor por
+        mujeres cabeza de hogar. Calidad, propósito y
+        tradición en cada pieza.</p>
+      <Image src={Logo} alt="Manos de Luz - Logo" width="280"/>
+    </div>
+  </div>
+</section>
+
+<style lang="less">
+  .container {
+    padding: 4rem 8rem;
+    gap: 5rem;
+  }
+
+  .quienes-somos {
+    &_picture {
+      width: 35%;
+    }
+
+    &_content {
+      width: 65%;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1.5rem;
+  }
+</style>
