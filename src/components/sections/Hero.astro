@@ -37,6 +37,7 @@ import Pheromone from "../../assets/hero-pheromones-2026.png"
     top: calc(50% + 34px + 2rem);
     left: 50%;
     width: 45%;
+    min-width: 423px;
     padding-top: 30%;
     max-width: 630px;
     background: url("../../assets/hero-text-bkg.svg") center center no-repeat;
@@ -98,6 +99,19 @@ import Pheromone from "../../assets/hero-pheromones-2026.png"
     }
   }
 
+  @media screen and (max-width: 950px){
+    main{
+      width: 70%;
+      padding-top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @media screen and (max-width: 570px){
+    main{
+      padding-top: 60%;
+    }
+  }
 
   @media screen and (min-width: 1200px){
     .hero-title{

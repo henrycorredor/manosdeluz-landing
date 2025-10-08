@@ -1,9 +1,11 @@
 <footer>
   <div class="container flex">
-    <div class="footer_left">
+    <div class="footer_left flex">
       <h1>Contáctenos</h1>
-      <span class="gerencia_data">gerencia@manosdeluz.net</span>
-      <span class="whatsapp_data">+1 (475) 280 1913</span>
+      <div class="footer_left_contact-data">
+        <span class="gerencia_data">gerencia@manosdeluz.net</span>
+        <span class="whatsapp_data">+1 (475) 280 1913</span>
+      </div>
       <div class="footer_form">
         <form>
           <label for="full-name">Nombre completo:</label>
@@ -23,12 +25,12 @@
         </form>
       </div>
     </div>
-    <div class="footer_right">
+    <div class="footer_right flex">
       <h2>
-        Manos de luz
+        <span>Manos de luz</span>
       </h2>
       <h3>
-        Productos para Botánicas
+        Productos para<br />Botánicas
       </h3>
       <div class="footer_direccion">
         2286 East Main Street, 06610 Bridgeport, Connecticut
@@ -44,16 +46,89 @@
     background-size: cover;
   }
 
-  .footer{
-    &_left{
-      text-align: center;
-      span{
-        display: block;
+  .footer {
+    &_left {
+      flex-direction: column;
+      align-items: center;
+
+      &_contact-data {
+        margin-bottom: 2rem;
+
+        span {
+          display: block;
+          width: fit-content;
+          padding-left: 1.5rem;
+          margin-bottom: .5rem;
+
+          &.gerencia_data {
+            background: url("../assets/footer-icon-mail.svg") center left no-repeat;
+          }
+
+          &.whatsapp_data {
+            background: url("../assets/footer-icon-whatsapp.svg") center left no-repeat;
+          }
+        }
       }
+    }
+    &_form{
+      width: 100%;
+      max-width: 400px;
+    }
+    &_right{
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      h2{
+        display: block;
+        width: 100%;
+        padding-bottom: 23%;
+        margin: 3rem 0 0;
+        background: url("../assets/manos-de-luz-logo-white.svg") center center no-repeat;
+        span{
+          display: none;
+        }
+      }
+
+      h3{
+        font-size: 2.5rem;
+        text-align: center;
+      }
+    }
+
+    &_direccion{
+      background: url("../assets/footer-icon-location.svg") center left no-repeat;
+      padding-left: 1.8rem;
     }
   }
 
-  .container > div{
+  form {
+    background: rgba(0, 0, 0, 0.47);
+    padding: 2rem;
+    border-radius: 1.3rem;
+
+    label, input, textarea {
+      display: block;
+    }
+
+    label {
+      font-size: .8rem;
+      margin-bottom: .2rem;
+    }
+
+    input, textarea {
+      width: calc(100% - 2rem);
+      margin-bottom: .5rem;
+      border-radius: .4rem;
+      border: none;
+      padding: .5rem .8rem;
+    }
+
+    textarea {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .container > div {
     width: 50%;
     min-width: 50%;
   }
