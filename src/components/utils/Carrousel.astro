@@ -19,30 +19,83 @@ const {imagePaths} = Astro.props
       ))
     }
   </div>
-  <div class="kl-carrousel__nav hidden">
-    <div class="kl-carrousel__nav__item">1</div>
+  <div class="kl-carrousel__nav">
+    <div class="kl-carrousel__nav__arrows prev">
+      <span>Previous</span>
+    </div>
+    {imagePaths.map((_, index) => {
+      return <div class={`kl-carrousel__nav__item${index === 0 ? " active" : ""}`}>
+        <span>{index}</span>
+      </div>
+    })}
+    <div class="kl-carrousel__nav__arrows next">
+      <span>Next</span>
+    </div>
   </div>
 </div>
 
 <script>
+  const CARROUSEL_DELAY = 3400
+  const carrouselContainer = document.querySelector(".kl-carrousel")
   const pictureGroup = document.querySelector('.kl-carrousel_pictures') as HTMLDivElement
   const imagesCount = document.querySelectorAll('.kl-carrousel_image').length
+  const navButtons = document.querySelectorAll('.kl-carrousel__nav__item')
   let carrouselPosition = 0
+  let intervalHandler: number | null = null
 
-  function rollCarrousel() {
-    carrouselPosition++
-    if (carrouselPosition >= imagesCount) {
-      carrouselPosition = 0
+  function getNextIndex() {
+    if(carrouselPosition + 1 >= imagesCount){
+      return 0
     }
-    pictureGroup.style.marginLeft = `-${carrouselPosition * 100}%`
+    return carrouselPosition+1
   }
 
-  setInterval(rollCarrousel, 8000)
+  function rollCarrousel(moveTo: number) {
+    carrouselPosition = moveTo
+    pictureGroup.style.marginLeft = `-${moveTo * 100}%`
+    navButtons.forEach((button, index) => {
+      button.classList.remove('active')
+      if(index === moveTo){
+        button.classList.add('active')
+      }
+    })
+  }
+
+  function autoRoll(){
+    rollCarrousel(getNextIndex())
+  }
+
+  function runInterval(){
+    intervalHandler = setInterval(autoRoll, CARROUSEL_DELAY)
+  }
+
+  carrouselContainer?.addEventListener("mouseover",()=>{
+    clearInterval(intervalHandler)
+  })
+
+  carrouselContainer?.addEventListener("mouseleave",runInterval)
+
+  navButtons.forEach((button, index)=>{
+    button.addEventListener("click", ()=>{
+      rollCarrousel(index)
+    })
+  })
+
+  document.querySelector(".kl-carrousel__nav__arrows.prev")?.addEventListener("click", ()=>{
+    const nextIndex = carrouselPosition - 1 < 0 ? imagesCount - 1 : carrouselPosition - 1
+    rollCarrousel(nextIndex)
+  })
+
+  document.querySelector(".kl-carrousel__nav__arrows.next")?.addEventListener("click", ()=>{
+    rollCarrousel(getNextIndex())
+  })
+  runInterval()
 </script>
 
 
 <style lang="less">
   .kl-carrousel {
+    position: relative;
     overflow: hidden;
 
     &_pictures {
@@ -64,7 +117,43 @@ const {imagePaths} = Astro.props
     }
 
     &__nav {
-      display: none;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      display: flex;
+      gap: 1rem;
+      transform: translateX(-50%);
+      &__item, &__arrows{
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        span{
+          display: none;
+        }
+      }
+      &__arrows {
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-right: 6px solid white;
+        &.next{
+          margin-top: -6px;
+          transform: rotate(180deg);
+        }
+      }
+      &__item{
+        background: white;
+        border-radius: 100px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px;
+        &:not(.active){
+          width: 6px;
+          height: 6px;
+          opacity: 0.7;
+        }
+        &.active{
+          width: 8px;
+          height: 8px;
+        }
+      }
     }
   }
 </style>
