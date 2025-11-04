@@ -18,46 +18,182 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
         <p>Por docena</p>
       </div>
       <div slot="tab-element" data-label="Amuletos" class="tab-content">
-        <Image src={cartones} alt="Amuletos - Cartones"/>
+        <div class="amuletos-cartones">
+          <Image src={cartones} alt="Amuletos - Cartones"/>
+        </div>
       </div>
       <div slot="tab-element" data-label="7 African Powers" class="tab-content">
-        <Image src={african} alt="Amuletos - Cartones"/>
+        <div class="amuletos-content">
+          <div class="amuletos-content_title">
+            <h2>7 African Powers</h2>
+          </div>
+          <div class="amuletos-content_image">
+            <Image src={african} alt="Amuletos - Cartones"/>
+          </div>
+          <div class="amuletos-content_legend">
+            <h3>El amuleto incluye</h3>
+            <ul>
+              <li>Imagen</li>
+              <li>Oración</li>
+              <li>Siete herramientas</li>
+              <li>Bolsa para empacar</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div slot="tab-element" data-label="Money Attraction" class="tab-content">
-        <Image src={money_attraction} alt="Amuletos - Cartones"/>
+        <div class="amuletos-content">
+          <div class="amuletos-content_title">
+            <h2>Money Attraction</h2>
+          </div>
+          <div class="amuletos-content_image">
+            <Image src={money_attraction} alt="Amuletos - Cartones"/>
+          </div>
+          <div class="amuletos-content_legend">
+            <h3>El amuleto incluye</h3>
+            <ul>
+              <li>Imagen</li>
+              <li>Oración</li>
+              <li>Flor Verde: Atracción de dinero y fortuna</li>
+              <li>Símbolo de fe: Buena suerte.</li>
+              <li>Peonía: Atrae la fortuna</li>
+              <li>El trébol de cuatro hojas: Atrae dinero</li>
+              <li>Cuarzo Jade o cuarzo verde: Atrae la prosperidad</li>
+              <li>Bolsa para empacar.</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div slot="tab-element" data-label="San Miguel" class="tab-content">
-        <Image src={san_miguel} alt="Amuletos - Cartones"/>
+        <div class="amuletos-content">
+          <div class="amuletos-content_title">
+            <h2>Against envy and evil eye</h2>
+          </div>
+          <div class="amuletos-content_image">
+            <Image src={san_miguel} alt="Amuletos - Cartones"/>
+          </div>
+          <div class="amuletos-content_legend">
+            <h3>El amuleto incluye:</h3>
+            <ul>
+              <li>Imagen</li>
+              <li>Oración</li>
+              <li>Lágrimas de San Pedro: Protección, la purificación y la conexión con lo divino</li>
+              <li>Peonía: Aleja los conflictos y problemas</li>
+              <li>Flor Roja: Bloqueo malas energías</li>
+              <li>Ojos de Santa Lucia: Protección contra el mal de ojo y la negatividad</li>
+              <li>Cruz: Protección</li>
+              <li>Bolsa para empacar</li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div slot="tab-element" data-label="Against envy and evil eye" class="tab-content">
-        <Image src={evil_eye} alt="Amuletos - Cartones"/>
+        <div class="amuletos-content">
+          <div class="amuletos-content_title">
+            <h2>San Miguel</h2>
+          </div>
+          <div class="amuletos-content_image">
+            <Image src={evil_eye} alt="Amuletos - Cartones"/>
+          </div>
+          <div class="amuletos-content_legend">
+            <h3>El amuleto incluye</h3>
+            <ul>
+              <li>Imagen</li>
+              <li>Oración</li>
+              <li>Cuarzo Rosa: liberador de emociones negativas y tóxicas.</li>
+              <li>Espada: Protección, aleja las malas energías y brujería</li>
+              <li>Peonía: Brinda protección.</li>
+              <li>Cruz: Protección Espiritual</li>
+              <li>Flor Roja: Neutraliza la envidia, Absorción de malas energías</li>
+              <li>Bolsa para empacar.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </Tabs>
   </div>
 </section>
 
 <style lang="less">
-  section{
+  section {
     background: url("../../assets/amuletos/amuletos-bkg.jpg") no-repeat center center;
     background-size: cover;
-    .container{
+
+    .container {
       padding: 4rem 1rem;
     }
   }
 
-  .amuletos-title{
+  .amuletos-title {
     background: url("../../assets/amuletos/amuletos-title.svg") no-repeat center right;
-    background-size: contain ;
+    background-size: contain;
     height: 7rem;
     min-width: 20rem;
     margin-bottom: 1rem;
-    h1, h2, p{
+
+    h1, h2, p {
       display: none;
     }
   }
 
-  .tab-content{
+  .tab-content {
     width: 100%;
     text-align: center;
+  }
+
+  .amuletos-cartones img {
+    width: 90%;
+    height: auto;
+  }
+
+  .amuletos-content {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 75% 25%;
+
+    &_title {
+      grid-column: 1 / 3;
+      font-size: 2rem;
+
+      h2{
+        margin: 0 0 2rem 0;
+      }
+    }
+
+    &_image {
+      grid-column: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 70%;
+        height: auto;
+      }
+    }
+
+    &_legend {
+      grid-column: 2;
+      font-size: 1.6rem;
+
+      h3 {
+        margin: 0 0 .5rem 0;
+        text-align: left;
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 1.2rem;
+        font-size: 1.3rem;
+      }
+
+      ul, li {
+        text-align: left;
+        list-style: none;
+      }
+    }
   }
 </style>
