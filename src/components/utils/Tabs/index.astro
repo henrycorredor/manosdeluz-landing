@@ -95,6 +95,12 @@ const classNames = className ? `kl-tabs ${className}` : 'kl-tabs'
   .kl-tab-content:not(.active) {
     display: none;
   }
+
+  @media screen and (max-width: 1100px){
+    .kl-tabs_nav_buttons button{
+      font-size: 1rem;
+    }
+  }
 </style>
 
 <script>

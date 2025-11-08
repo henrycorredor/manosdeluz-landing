@@ -65,4 +65,30 @@ import abanico from "../../assets/san-miguel/abanico-herraduras.png"
       }
     }
   }
+
+  @media screen and (max-width: 900px){
+    .container {
+      display: block;
+      position: relative;
+    }
+
+    .san-miguel{
+      &_image{
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        background-color: black;
+        transform: translateY(-50%);
+        img{
+          opacity: .5;
+        }
+      }
+
+      &_content{
+        position: relative;
+        width: 80%;
+        margin: 3rem auto 0;
+      }
+    }
+  }
 </style>
