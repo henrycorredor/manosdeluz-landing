@@ -11,13 +11,13 @@ const data = [
   },
   {
     title: "AGAINST ENVY",
-    subtitle: "CONTRA ENVIDIA",
+    subtitle: "",
     content: "El perfume actúa como  una protección energética Se utiliza aplicándolo como fragancia diaria, en rituales de limpieza o en el negocio/hogar para mantener un ambiente protegido y libre de envidias.",
     code: "against_envy"
   },
   {
     title: "TAMING THE BULLY",
-    subtitle: "AMANSA GUAPOS",
+    subtitle: "",
     content: "Perfume que se usa en rituales de amor, para suavizar corazones rebeldes, atraer la atención de alguien especial o reforzar el dominio en una relación. Se considera un aliado poderoso para el control emocional y el magnetismo amoroso.",
     code: "taming_the_bully"
   },
@@ -35,7 +35,7 @@ const data = [
   },
   {
     title: "COME TO ME",
-    subtitle: "VEN A MI",
+    subtitle: "",
     content: "Este perfume es considerado un llamador de amor, ideal para quienes buscan que alguien especial regrese o se acerque con más cariño y entrega. También se usa en rituales para endulzar relaciones y generar mayor atracción.",
     code: "come_to_me"
   },
@@ -47,25 +47,25 @@ const data = [
   },
   {
     title: "FAST LUCK",
-    subtitle: "SUERTE RÁPIDA",
+    subtitle: "",
     content: "El perfume simboliza la apertura inmediata de caminos y la atracción de oportunidades favorables. Se utiliza como fragancia diaria o en rituales cuando se necesita un empuje energético inmediato, sobre todo antes de reuniones, ventas, entrevistas, exámenes o juegos de azar.",
     code: "fast_luck"
   },
   {
     title: "HEALTH MONEY LOVE",
-    subtitle: "SALUD, DINERO, AMOR",
+    subtitle: "",
     content: "Este perfume es considerado un triángulo perfecto de la buena fortuna, ideal para quienes desean un amuleto energético integral que cubra las áreas más importantes de la vida. Se utiliza como fragancia diaria o en rituales de petición para atraer bienestar en general.",
     code: "health_money_love"
   },
   {
     title: "HOLY DEATH",
-    subtitle: "SANTA MUERTE",
+    subtitle: "",
     content: "Este perfume está inspirado en la Santa Muerte de 7 colores, símbolo de equilibrio y protección universal. Su esencia invoca energías de salud, sabiduría, amor, justicia, protección y buena suerte, brindando armonía y guía espiritual en todos los aspectos de la vida.",
     code: "holy_death"
   },
   {
     title: "HONEY OF LOVE",
-    subtitle: "MIEL DE AMOR",
+    subtitle: "",
     content: "Este perfume se utiliza en rituales de amor, reconciliación y como fragancia diaria para irradiar dulzura y atraer vibraciones románticas. Se considera un aliado espiritual poderoso para quienes desean un amor más tierno, estable y duradero.",
     code: "honey_of_love"
   },
@@ -77,25 +77,31 @@ const data = [
   },
   {
     title: "LAW STAY AWAY",
-    subtitle: "ALEJA POLICÍA",
+    subtitle: "",
     content: "Es muy buscado en el mundo esotérico como un perfume de defensa espiritual, ideal para quienes desean sentirse libres de cargas legales o situaciones con la ley.",
     code: "law_stay_away"
   },
   {
+    title: "Legend of the Red Thread",
+    subtitle: "",
+    content: "Este perfume está inspirado en la leyenda del hilo rojo, ayudando a encontrar el amor ideal y a reconectar con el alma gemela. Su energía une espiritualmente a las personas destinadas a encontrarse, fortaleciendo lazos profundos y guiando hacia relaciones marcadas por el destino y la conexión energética.",
+    code: "hilo_rojo"
+  },
+  {
     title: "LOVE SPELL",
-    subtitle: "EMBRUJO DE AMOR",
+    subtitle: "",
     content: "Este perfume despierta el poder del encanto y la seducción, ayudando a hechizar a la pareja y fortalecer los lazos afectivos. Su fragancia envuelve con una energía magnética que inspira deseo, pasión y entrega, creando una conexión irresistible y profunda.",
     code: "love_spell"
   },
   {
     title: "MONEY ATTRACTION",
-    subtitle: "ATRACCIÓN DE DINERO",
+    subtitle: "",
     content: "Este perfume es ideal para quienes buscan mejorar su situación económica, cerrar negocios exitosos o atraer ingresos inesperados, cargando al usuario con energía de riqueza y prosperidad.",
     code: "money_attraction"
   },
   {
     title: "OPEN ROAD",
-    subtitle: "ABRE CAMINO",
+    subtitle: "",
     content: "Es ideal para quienes sienten que su vida está estancada o que, por más esfuerzos que hagan, no logran avanzar. Este perfume impulsa el camino hacia la prosperidad, el éxito, la abundancia y la armonía.",
     code: "open_road"
   },
@@ -107,7 +113,7 @@ const data = [
   },
   {
     title: "PHEROMONES FOR WOMEN",
-    subtitle: "FREGONAS PARA MUJER",
+    subtitle: "",
     content: "Este perfume potencia las áreas del amor y la atracción, despertando un magnetismo especial que cautiva al sexo opuesto. Su energía eleva el encanto personal y proyecta una presencia irresistible, haciendo que quien lo usa sea más admirado y deseado.",
     code: "pheromones_for_women"
   },
@@ -125,15 +131,9 @@ const data = [
   },
   {
     title: "TIE MAN",
-    subtitle: "ATRAPA HOMBRE",
+    subtitle: "",
     content: "Es una poderosa esencia esotérica utilizada para atraer, conquistar y retener el amor masculino, despertando deseo, interés y compromiso en la persona deseada.",
     code: "tie_man"
-  },
-  {
-    title: "Legend of the Red Thread",
-    subtitle: "",
-    content: "Este perfume está inspirado en la leyenda del hilo rojo, ayudando a encontrar el amor ideal y a reconectar con el alma gemela. Su energía une espiritualmente a las personas destinadas a encontrarse, fortaleciendo lazos profundos y guiando hacia relaciones marcadas por el destino y la conexión energética.",
-    code: "hilo_rojo"
   }
 ]
 
@@ -150,21 +150,22 @@ const titles = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfum
              data-label={perfume.title.charAt(0).toUpperCase() + perfume.title.slice(1).toLowerCase()}
              class="tab-content">
           <div class="perfume-data-container">
-            <div class="perfume-data-container_pic">
-              <Image src={images[`../../assets/perfumes/pic/${perfume.code}.png`]()}
-                     alt={`Perfume - ${perfume.title}`}/>
-            </div>
-            <div class="perfume-data-container_content">
-              <div class="perfume-data-container_content_title">
-                <h1>
-                  <span>{perfume.title}</span>
-                  <span class="title-picture">
+            <div class="perfume-data-container_title">
+              <h1>
+                <span>{perfume.title}</span>
+                <span class="title-picture">
                     <Image src={titles[`../../assets/perfumes/titles/${perfume.code}.svg`]()} alt={perfume.title}/>
                   </span>
-                </h1>
-                {perfume.subtitle && <h2>{perfume.subtitle}</h2>}
+              </h1>
+              {perfume.subtitle && <h2>{perfume.subtitle}</h2>}
+            </div>
+            <div class="perfume-data-container_pic">
+              <div class="pic-container">
+                <Image src={images[`../../assets/perfumes/pic/${perfume.code}.png`]()}
+                       alt={`Perfume - ${perfume.title}`}/>
               </div>
-
+            </div>
+            <div class="perfume-data-container_content">
               <p>{perfume.content}</p>
             </div>
           </div>
@@ -186,39 +187,82 @@ const titles = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfum
       }
 
       &_content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        .tab-content {
+          position: sticky;
+          top: 110px;
+          bottom: 0;
+          margin: 0 auto;
+        }
       }
     }
   }
 
   .perfume-data-container {
-    display: flex;
+    display: grid;
+    grid-template:  "picture title" auto
+                    "picture content" 1fr;
+    grid-column-gap: 2rem;
+    overflow: hidden;
 
-    h2{
+    h2 {
       color: gray;
       font-size: 1rem;
       text-align: center;
     }
 
+    &_title {
+      grid-area: title;
+      span {
+        img {
+          display: block;
+          max-width: 280px;
+          height: auto;
+          margin: 0 auto;
+        }
+        &:not(.title-picture) {
+          display: none;
+        }
+      }
+    }
+    &_pic {
+      grid-area: picture;
+    }
     &_content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem;
+      grid-area: content;
+    }
+  }
+
+  @media screen and (max-width: 920px) {
+    .perfume-data-container_pic img {
+      margin-left: -60px;
+    }
+  }
+
+  @media screen and (max-width: 780px) {
+    #perfumes-tabs .kl-tabs_nav{
+      min-width: 170px;
+    }
+    .perfume-data-container {
+      grid-template:  "title"
+                      "picture"
+                      "content";
+      .pic-container{
+        width: fit-content;
+        margin: 0 auto;
+        padding-right: 20px;
+        img{
+          max-height: 300px;
+          width: auto;
+        }
+      }
+      &_pic img {
+        margin-left: -25px;
+      }
 
       &_title {
         span {
-          img{
-            display: block;
-            max-width: 280px;
-            height: auto;
-            margin: 0 auto;
-          }
-          &:not(.title-picture) {
-            display: none;
+          img {
+            width: 100%;
           }
         }
       }

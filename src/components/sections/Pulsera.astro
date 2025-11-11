@@ -44,16 +44,18 @@ import Camandula from "../../assets/camandula/camandula.jpg";
         <p>Además, brinda protección espiritual y energética, actuando omo un escudo de luz frente a las energías
           negativas</p>
       </div>
-      <div class="content_picture">
-        <div class="content_picture_img">
-          <Image src={Camandula} alt="Camandula"/>
+      <div class="content_pictures flex">
+        <div class="content_picture">
+          <div class="content_picture_img">
+            <Image src={Camandula} alt="Camandula"/>
+          </div>
+          <div class="content_picture_legend">
+            <h2>Se venden por docena</h2>
+          </div>
         </div>
-        <div class="content_picture_legend">
-          <h2>Se venden por docena</h2>
+        <div class="content_model">
+          <Image src={Modelo} alt="Modelo"/>
         </div>
-      </div>
-      <div class="content_model">
-        <Image src={Modelo} alt="Modelo"/>
       </div>
     </div>
   </div>
@@ -86,9 +88,9 @@ import Camandula from "../../assets/camandula/camandula.jpg";
     font-size: 1.3rem;
   }
 
-  .pulsera{
-    .content{
-      &_legend{
+  .pulsera {
+    .content {
+      &_legend {
         padding: 0 3rem;
         p {
           margin: 0;
@@ -117,22 +119,63 @@ import Camandula from "../../assets/camandula/camandula.jpg";
     }
   }
 
-  .camandula{
-    .content{
+  .camandula {
+    .content {
       gap: 4rem;
-      &_legend{
+      &_legend {
         padding-top: 4rem;
         min-width: 35%;
         width: 35%;
       }
-      &_picture{
+      &_pictures {
+        gap: 4rem;
+      }
+      &_picture {
+        min-width: 30%;
+        width: 30%;
+      }
+      &_model {
+        padding-top: 1rem;
+        min-width: 60%;
+        width: 60%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    .container{
+      padding: 1rem;
+    }
+    .content {
+      flex-direction: column;
+      gap: 1.5rem;
+      &_picture {
+        width: 40%;
+      }
+      &_legend_img{
+        margin: 1rem auto;
+      }
+    }
+    .pulsera .content_picture {
+      margin: 0 auto;
+    }
+    .camandula .content {
+      gap: 1.5rem;
+      &_legend {
+        width: 100%;
+        padding: 0;
+      }
+      &_pictures {
+        gap: inherit;
+        justify-content: space-evenly;
+      }
+      &_picture {
         min-width: 20%;
         width: 20%;
       }
-      &_model{
-        padding-top: 1rem;
-        min-width: 35%;
-        width: 35%;
+      &_model {
+        min-width: 40%;
+        width: 40%;
       }
     }
   }

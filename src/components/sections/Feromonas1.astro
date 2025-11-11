@@ -12,13 +12,13 @@ const pics = [
   [ForMan, "Pheromones for man"],
   [ForWoman, "Pheromones for woman"],
   [MoneyAttraction, "Money Attraction"],
-  [TripleLuck, "Triple Luck"],
+  [TripleLuck, "Triple Luck"]
 ]
 ---
 
 <section>
   <div class="container">
-    <h1 class="section-title">Feromonas en francia pura</h1>
+    <h1 class="section-title">Feromonas en fragancia pura</h1>
     <div class="content flex">
       <div class="content_data">
         <h1>
@@ -27,22 +27,25 @@ const pics = [
             <Image src={TitlePic} alt="Atracción, poder y energía en cada gota"/>
           </span>
         </h1>
-        <p>
-          Nuestras feromonas en fragancia pura están diseñadas para ptenciar tus intenciones: seducción, abundancia,
-          suerte y conexión personal.
-        </p>
-        <p>
-          Fórmulas concentradas, aromas envolventes y resultados que se sienten.
-        </p>
-        <p><strong>
-          ¡Activa tu magnetismo natural!
-        </strong>
-        </p>
+        <div class="content_data_legend">
+          <p>
+            Nuestras feromonas en fragancia pura están diseñadas para ptenciar tus intenciones: seducción, abundancia,
+            suerte y conexión personal.
+          </p>
+          <p>
+            Fórmulas concentradas, aromas envolventes y resultados que se sienten.
+          </p>
+          <p><strong>
+            ¡Activa tu magnetismo natural!
+          </strong>
+          </p>
+        </div>
       </div>
       <div class="content_pictures">
-        {pics.map((pic) => (<div class="content_pictures_item flex justify-center align-center">
-          <Image src={pic[0]} alt={pic[1]} />
-        </div>))}
+        {pics.map((pic) => (
+          <div class="content_pictures_item flex justify-center align-center">
+            <Image src={pic[0]} alt={pic[1]}/>
+          </div>))}
       </div>
     </div>
   </div>
@@ -50,7 +53,7 @@ const pics = [
 
 <style lang="less">
   h1 span {
-    img{
+    img {
       width: 100%;
       height: auto;
     }
@@ -59,17 +62,55 @@ const pics = [
     }
   }
 
-  .content{
+  .content {
     gap: 5rem;
-    &_data{
+    &_data {
       width: 20%;
       min-width: 20%;
     }
-    &_pictures{
+    &_pictures {
       display: flex;
-      img{
+      flex-wrap: wrap;
+      row-gap: 2rem;
+      &_item {
+        width: 21%;
+        //esta es especial porque la foto es muy delgada, hay que quitarle un poco de más ancho
+        &:first-child {
+          width: 15%;
+        }
+      }
+      img {
         width: 100%;
         height: auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 930px) {
+    .content {
+      flex-direction: column;
+      gap: 2rem;
+      &_data {
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+        justify-content: start;
+        h1{
+          margin: 0;
+        }
+        &_legend p:first-child{
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .content {
+      &_data {
+        h1{
+          min-width: 40%;
+        }
       }
     }
   }

@@ -43,3 +43,11 @@ section .container, footer .container{
   color: white;
   background: #575756 url("../assets/icono-manos-de-luz.svg") no-repeat .5rem center;
 }
+
+section{
+  border: 1px solid red;
+}
+
+section *{
+  border: 1px solid rebeccapurple;
+}
