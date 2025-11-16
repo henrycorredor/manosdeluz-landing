@@ -108,7 +108,7 @@ const data = [
   {
     title: "PHEROMONES FOR MAN",
     subtitle: "FEROMONAS PARA HOMBRES",
-    content: "LEste perfume potencia las áreas del amor y la atracción, despertando un magnetismo especial que cautiva al sexo opuesto. Su energía eleva el encanto personal y proyecta una presencia irresistible, haciendo que quien lo usa sea más admirado y deseado.",
+    content: "Este perfume potencia las áreas del amor y la atracción, despertando un magnetismo especial que cautiva al sexo opuesto. Su energía eleva el encanto personal y proyecta una presencia irresistible, haciendo que quien lo usa sea más admirado y deseado.",
     code: "pheromones_for_man"
   },
   {
@@ -240,8 +240,13 @@ const titles = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfum
 
   @media screen and (max-width: 780px) {
     #perfumes-tabs .kl-tabs_nav{
-      min-width: 170px;
+      width: 100px;
+      min-width: 100px;
+      button{
+        padding-bottom: 10px;
+      }
     }
+
     .perfume-data-container {
       grid-template:  "title"
                       "picture"

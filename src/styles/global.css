@@ -4,7 +4,21 @@ html, body{
 }
 
 body{
-  font-family: Inter, Roboto, 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  font-family: "Elms Sans", 'Helvetica Neue', 'Arial Nova', 'Nimbus Sans', Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.pt-serif-regular {
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-serif-bold {
+  font-family: "PT Serif", serif;
+  font-weight: 700;
+  font-style: normal;
 }
 
 .flex{
@@ -44,10 +58,17 @@ section .container, footer .container{
   background: #575756 url("../assets/icono-manos-de-luz.svg") no-repeat .5rem center;
 }
 
-section{
-  border: 1px solid red;
+@media screen and (max-width: 750px){
+  .section-title{
+    font-size: 1.5rem;
+    padding: .5rem 4rem .5rem 6rem;
+  }
 }
 
-section *{
-  border: 1px solid rebeccapurple;
+@media screen and (max-width: 590px){
+  .section-title{
+    font-size: 1rem;
+    padding: .8rem 1rem .8rem 3rem;
+  }
+
 }

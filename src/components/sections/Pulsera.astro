@@ -143,6 +143,9 @@ import Camandula from "../../assets/camandula/camandula.jpg";
   }
 
   @media screen and (max-width: 650px) {
+    h1{
+      font-size: 1.5rem;
+    }
     .container{
       padding: 1rem;
     }
@@ -150,14 +153,19 @@ import Camandula from "../../assets/camandula/camandula.jpg";
       flex-direction: column;
       gap: 1.5rem;
       &_picture {
-        width: 40%;
+        width: 50%;
       }
       &_legend_img{
         margin: 1rem auto;
       }
     }
-    .pulsera .content_picture {
-      margin: 0 auto;
+    .pulsera .content {
+      &_legend{
+        padding: 0;
+      }
+      &_picture {
+        margin: 0 auto;
+      }
     }
     .camandula .content {
       gap: 1.5rem;

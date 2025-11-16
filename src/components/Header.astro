@@ -17,11 +17,11 @@ import Whatsapp from "../assets/social-whatsapp.svg"
       </div>
       <a href="#"><Image src={FBLogo} alt="Síguenos en Facebook" /></a>
       <a href="#"><Image src={INSLogo} alt="Síguenos en Instagram" /></a>
-      MdeLuz25
+      <span>MdeLuz25</span>
     </div>
     <div class="nav-contact_whatsapp flex align-center">
       <Image src={Whatsapp} alt="Contáctanos en WhatsApp" />
-      +1 (475) 280 1913
+      <span>+1 (475) 280 1913</span>
     </div>
   </div>
 </nav>
@@ -56,6 +56,32 @@ import Whatsapp from "../assets/social-whatsapp.svg"
 
     &_social, &_whatsapp{
       gap: .5rem;
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .nav-logo{
+      width: 100px;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .nav-contact{
+      gap: .5rem;
+      &_whatsapp{
+       span{
+         display: none;
+       }
+      }
+      &_social {
+        span{
+          display: none;
+        }
+        &_title {
+          display: none;
+        }
+      }
     }
   }
 </style>

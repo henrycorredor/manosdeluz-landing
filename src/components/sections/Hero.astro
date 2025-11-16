@@ -9,7 +9,7 @@ import Pheromone from "../../assets/hero-pheromones-2026.png"
       <div class="hero-title_pic">
         <Image src={Pheromone} alt="Pheromones 2026" />
       </div>
-      <div class="hero-title_text flex flex-column justify-center">
+      <div class="hero-title_text flex flex-column justify-center pt-serif-bold">
         <h1 class="flex flex-column">
           <span class="text">Pheromones</span>
           <span class="number">2026</span>
@@ -37,7 +37,8 @@ import Pheromone from "../../assets/hero-pheromones-2026.png"
     top: calc(50% + 34px + 2rem);
     left: 50%;
     width: 45%;
-    min-width: 423px;
+    /*TODO: organizar este min-with*/
+    /*min-width: 423px;*/
     padding-top: 30%;
     max-width: 630px;
     background: url("../../assets/hero-text-bkg.svg") center center no-repeat;
@@ -107,9 +108,35 @@ import Pheromone from "../../assets/hero-pheromones-2026.png"
     }
   }
 
-  @media screen and (max-width: 570px){
+  @media screen and (max-width: 620px){
     main{
+      width: 100%;
       padding-top: 60%;
+    }
+    .hero-title{
+      &_text {
+        h1{
+          .text{
+            font-size: 1.6rem;
+            margin-top: -25px;
+          }
+          .number{
+            font-size: 5rem;
+            margin-top: -6px;
+          }
+        }
+        h2 {
+          font-size: 1.9rem;
+          line-height: 0;
+        }
+      }
+      &_sub {
+        font-size: 0.9rem;
+        padding-top: 0;
+      }
+      &_pic img{
+        margin: 0 -27px -10px 0;
+      }
     }
   }
 

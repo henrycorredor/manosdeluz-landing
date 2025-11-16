@@ -79,6 +79,9 @@ const pics = [
   }
 
   @media screen and (max-width: 930px){
+    section{
+      background: linear-gradient(180deg, rgba(87, 87, 86, 1) 0%, rgba(87, 87, 86, 1) 70%, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 1) 100%);
+    }
     .container{
       flex-direction: column;
       gap: 1rem;
@@ -86,7 +89,12 @@ const pics = [
     }
     .content{
       &_data{
+        h1{
+          font-size: 1.9rem;
+          line-height: 1;
+        }
         width: 100%;
+        padding: 0;
         p{
           color: white;
         }
