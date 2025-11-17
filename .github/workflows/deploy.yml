@@ -18,6 +18,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - run: corepack enable yarn
       - name: Checkout your repository using git
         uses: actions/checkout@v5
       - name: Install, build, and upload your site
