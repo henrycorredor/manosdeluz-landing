@@ -145,11 +145,7 @@ const classNames = className ? `kl-tabs ${className}` : 'kl-tabs'
     tabsController.run()
 
     intersectionCallbacks[container.id] = (isIntersecting: boolean) => {
-      if (isIntersecting) {
-        tabsController.run()
-      } else {
-        tabsController.stop()
-      }
+      tabsController.inViewport(isIntersecting)
     }
 
     obs.observe(container)

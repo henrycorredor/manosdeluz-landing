@@ -3,6 +3,7 @@ export default class KlTabController {
 
   private running: boolean
   private timeLeft: number
+  private insideViewport: boolean
   public actualTabIndex: number
   public percentLeft: number
 
@@ -16,6 +17,7 @@ export default class KlTabController {
     this.timeLeft = delay
     this.actualTabIndex = 0;
     this.running = false;
+    this.insideViewport = false;
 
     this.tabsButton = container.querySelectorAll(".kl-tabs_nav_buttons_button-container")
     this.tabsContent = container.querySelectorAll(".kl-tabs_content > *");
@@ -55,6 +57,7 @@ export default class KlTabController {
   }
 
   run() {
+    if(!this.insideViewport) return
     this.running = true
     this.runner()
   }
@@ -73,5 +76,14 @@ export default class KlTabController {
 
   onTimeChange(cb: (percent: number) => void) {
     this.onTimeChangeCb = cb
+  }
+
+  inViewport(isInViewport: boolean){
+    this.insideViewport = isInViewport
+    if (isInViewport) {
+      this.run()
+    } else {
+      this.stop()
+    }
   }
 }
