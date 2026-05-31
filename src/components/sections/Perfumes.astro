@@ -134,6 +134,44 @@ const data = [
     subtitle: "",
     content: "Es una poderosa esencia esotérica utilizada para atraer, conquistar y retener el amor masculino, despertando deseo, interés y compromiso en la persona deseada.",
     code: "tie_man"
+  },
+  {
+    title: "ANAISA",
+    subtitle: "",
+    content: "Representa amor consciente, armonía emocional y gozo de vivir desde el corazón. Su energía ayuda a sanar heridas afectivas, establecer relaciones saludables y abrir caminos donde antes había rigidez emocional. Su presencia espiritual es percibida como cálida y maternal, guiando sin sofocar y transformando desde la aceptación profunda.",
+    code: "anaisa"
+  },
+  {
+    title: "OSHUN",
+    subtitle: "",
+    content: "También conocida como Oxum u Osun, es la venerada diosa yoruba del amor, la belleza, la prosperidad y la fertilidad. Como deidad poderosa y compasiva, ofrece a sus seguidores guía, sanación y protección.",
+    code: "oshun"
+  },
+  {
+    title: "YEMAYÁ",
+    subtitle: "",
+    content: "Es el Orisha del mar y una de las grandes madres del panteón yoruba, venerada ampliamente en la tradición religiosa afrocubana. Representa la maternidad, la fertilidad y el origen de la vida, siendo protectora de sus hijos y dueña de las aguas. Su culto expresa la fuerza creadora que sostiene la existencia y garantiza la continuidad del mundo.",
+    code: "yemaya"
+  },
+  {
+    title: "LIMPIA Y DESPOJO",
+    subtitle: "",
+    content: "Este perfume con feromonas es una herramienta poderosa para liberar energías negativas y promover un estado de bienestar físico, emocional y espiritual. A través de este perfume, puedes crear un espacio saludable y armonioso en tu vida.",
+    code: "limpia_y_despojo"
+  },
+  {
+    title: "ELEGUA",
+    subtitle: "",
+    content: "Considerado el dueño de los caminos, el destino y el mensajero entre los humanos y los demás orishas. Se le invoca primero para abrir puertas, ofrecer protección, prosperidad y quitar obstáculos en la vida.",
+    code: "elegua",
+    titleExt: "png"
+  },
+  {
+    title: "FORTUNA & CASINO",
+    subtitle: "",
+    content: "Es un perfume con feromonas creado para atraer suerte, confianza y energía ganadora. Ideal para usar antes de juegos de suerte y azar como casinos, loterías, bingos, rifas y apuestas.",
+    code: "fortuna_casino",
+    titleExt: "png"
   }
 ]
 
@@ -154,7 +192,7 @@ const titles = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfum
               <h1>
                 <span>{perfume.title}</span>
                 <span class="title-picture">
-                    <Image src={titles[`../../assets/perfumes/titles/${perfume.code}.svg`]()} alt={perfume.title}/>
+                    <Image src={titles[`../../assets/perfumes/titles/${perfume.code}.${perfume.titleExt || 'svg'}`]()} alt={perfume.title}/>
                   </span>
               </h1>
               {perfume.subtitle && <h2>{perfume.subtitle}</h2>}
