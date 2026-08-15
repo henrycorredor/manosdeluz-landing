@@ -181,7 +181,7 @@ const titles = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfum
 
 <section>
   <div class="container">
-    <h1 class="section-title">Perfumes con Feromonas</h1>
+    <h2 class="section-title">Perfumes con Feromonas</h2>
     <Tabs id="perfumes-tabs">
       {data.map((perfume) => (
         <div slot="tab-element"
@@ -189,13 +189,13 @@ const titles = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfum
              class="tab-content">
           <div class="perfume-data-container">
             <div class="perfume-data-container_title">
-              <h1>
+              <h3 class="perfume-title">
                 <span>{perfume.title}</span>
                 <span class="title-picture">
                     <Image src={titles[`../../assets/perfumes/titles/${perfume.code}.${perfume.titleExt || 'svg'}`]()} alt={perfume.title}/>
                   </span>
-              </h1>
-              {perfume.subtitle && <h2>{perfume.subtitle}</h2>}
+              </h3>
+              {perfume.subtitle && <h4 class="perfume-subtitle">{perfume.subtitle}</h4>}
             </div>
             <div class="perfume-data-container_pic">
               <div class="pic-container">
@@ -242,14 +242,22 @@ const titles = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfum
     grid-column-gap: 2rem;
     overflow: hidden;
 
-    h2 {
+    h4 {
       color: gray;
       font-size: 1rem;
       text-align: center;
+      margin: 0;
     }
 
     &_title {
       grid-area: title;
+
+      h3 {
+        margin: 0;
+        font-size: 2rem;
+        text-align: center;
+      }
+
       span {
         img {
           display: block;

@@ -13,7 +13,7 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
   <div class="container">
     <Tabs id="tabs-amuletos">
       <div slot="nav-title" class="amuletos-title">
-        <h1>Amuletos</h1>
+        <h2>Amuletos</h2>
         <h2>Contra - resguardo</h2>
         <p>Por docena</p>
       </div>
@@ -25,13 +25,13 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
       <div slot="tab-element" data-label="7 African Powers" class="tab-content">
         <div class="amuletos-content">
           <div class="amuletos-content_title">
-            <h2>7 African Powers</h2>
+            <h3>7 African Powers</h3>
           </div>
           <div class="amuletos-content_image">
             <Image src={african} alt="Amuletos - Cartones"/>
           </div>
           <div class="amuletos-content_legend">
-            <h3>El amuleto incluye</h3>
+            <h4>El amuleto incluye</h4>
             <ul>
               <li>Imagen</li>
               <li>Oración</li>
@@ -44,13 +44,13 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
       <div slot="tab-element" data-label="Money Attraction" class="tab-content">
         <div class="amuletos-content">
           <div class="amuletos-content_title">
-            <h2>Money Attraction</h2>
+            <h3>Money Attraction</h3>
           </div>
           <div class="amuletos-content_image">
             <Image src={money_attraction} alt="Amuletos - Cartones"/>
           </div>
           <div class="amuletos-content_legend">
-            <h3>El amuleto incluye</h3>
+            <h4>El amuleto incluye</h4>
             <ul>
               <li>Imagen</li>
               <li>Oración</li>
@@ -67,13 +67,13 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
       <div slot="tab-element" data-label="San Miguel" class="tab-content">
         <div class="amuletos-content">
           <div class="amuletos-content_title">
-            <h2>San Miguel</h2>
+            <h3>San Miguel</h3>
           </div>
           <div class="amuletos-content_image">
             <Image src={san_miguel} alt="Amuletos - Cartones"/>
           </div>
           <div class="amuletos-content_legend">
-            <h3>El amuleto incluye:</h3>
+            <h4>El amuleto incluye:</h4>
             <ul>
               <li>Imagen</li>
               <li>Oración</li>
@@ -90,13 +90,13 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
       <div slot="tab-element" data-label="Against envy and evil eye" class="tab-content">
         <div class="amuletos-content">
           <div class="amuletos-content_title">
-            <h2>Against envy and evil eye</h2>
+            <h3>Against envy and evil eye</h3>
           </div>
           <div class="amuletos-content_image">
             <Image src={evil_eye} alt="Amuletos - Cartones"/>
           </div>
           <div class="amuletos-content_legend">
-            <h3>El amuleto incluye</h3>
+            <h4>El amuleto incluye</h4>
             <ul>
               <li>Imagen</li>
               <li>Oración</li>
@@ -131,7 +131,7 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
     min-width: 20rem;
     margin-bottom: 1rem;
 
-    h1, h2, p {
+    h2, p {
       display: none;
     }
   }
@@ -157,7 +157,7 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
       grid-area: title;
       font-size: 2rem;
 
-      h2{
+      h3{
         margin: 0 0 2rem 0;
       }
     }
@@ -178,7 +178,7 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
       grid-area: legend;
       font-size: 1.6rem;
 
-      h3 {
+      h4 {
         margin: 0 0 .5rem 0;
         text-align: left;
       }
@@ -215,7 +215,7 @@ import evil_eye from "../../assets/amuletos/amuletos-mal-de-ojo.png"
       }
       &_legend {
         font-size: 1.2rem;
-        h3{
+        h4{
           font-size: 1.1rem;
         }
         li{

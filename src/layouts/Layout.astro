@@ -2,6 +2,14 @@
 import "../styles/global.css"
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+
+const {
+  title = "Manos de Luz | Productos para botánicas - Camándulas, amuletos, perfumes y feromonas",
+  description = "Productos para botánicas en Estados Unidos: camándulas, amuletos, pulseras, perfumes con feromonas y artículos de protección, hechos a mano con amor por mujeres cabeza de hogar.",
+} = Astro.props;
+
+const url = "https://manosdeluz.net/";
+const ogImage = "https://manosdeluz.net/og-image.jpg";
 ---
 
 <!doctype html>
@@ -11,10 +19,52 @@ import Footer from "../components/Footer.astro";
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:wght@100..900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
-		<title>Manos de Luz</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Elms+Sans:wght@100..900&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={url} />
+		<meta name="theme-color" content="#575756" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Manos de Luz" />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={url} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Manos de Luz - Productos para botánicas" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Store",
+			"name": "Manos de Luz",
+			"description": description,
+			"url": url,
+			"image": ogImage,
+			"telephone": "+1 (475) 280 1913",
+			"email": "gerencia@manosdeluz.net",
+			"address": {
+				"@type": "PostalAddress",
+				"addressLocality": "Bridgeport",
+				"addressRegion": "Connecticut",
+				"addressCountry": "US"
+			},
+			"sameAs": [
+				"https://www.facebook.com/MdeLuz25",
+				"https://www.instagram.com/mdeluz25/"
+			]
+		})} />
 	</head>
 	<body>
     <Header />

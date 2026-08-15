@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const { title = "Página no encontrada | Manos de Luz", description = "La página que buscas no existe. Vuelve al inicio de Manos de Luz." } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <main class="not-found">
+    <div class="container">
+      <h1>Página no encontrada</h1>
+      <p>Lo sentimos, la página que buscas no existe o ha sido movida.</p>
+      <a href="/">Volver al inicio</a>
+    </div>
+  </main>
+</Layout>
+
+<style lang="less">
+  .not-found {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #575756;
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      display: inline-block;
+      padding: .8rem 2rem;
+      border-radius: 100px;
+      background: #575756;
+      color: white;
+      text-decoration: none;
+    }
+  }
+</style>

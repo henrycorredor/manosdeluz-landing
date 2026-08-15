@@ -56,6 +56,19 @@ section .container, footer .container{
   border-radius: 100px;
   color: white;
   background: #575756 url("../assets/icono-manos-de-luz.svg") no-repeat .5rem center;
+  font-size: 2rem;
+}
+
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media screen and (max-width: 750px){

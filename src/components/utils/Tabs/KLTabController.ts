@@ -18,6 +18,7 @@ export default class KlTabController {
     this.actualTabIndex = 0;
     this.running = false;
     this.insideViewport = false;
+    this.percentLeft = 100;
 
     this.tabsButton = container.querySelectorAll(".kl-tabs_nav_buttons_button-container")
     this.tabsContent = container.querySelectorAll(".kl-tabs_content > *");

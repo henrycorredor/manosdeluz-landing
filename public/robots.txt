@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://manosdeluz.net/sitemap-index.xml

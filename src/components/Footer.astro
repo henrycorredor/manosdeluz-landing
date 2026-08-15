@@ -1,9 +1,9 @@
 <footer>
   <div class="container footer">
-    <h1>Contáctenos</h1>
-    <h2>
+    <h2 class="footer_title">Contáctenos</h2>
+    <div class="footer_logo" aria-hidden="true">
       <span>Manos de luz</span>
-    </h2>
+    </div>
     <h3 class="pt-serif-regular">
       Productos para<br/>Botánicas
     </h3>
@@ -54,11 +54,11 @@
     grid-template-rows: auto auto 1fr max-content;
     color: white;
 
-    h1 {
+    .footer_title {
       grid-area: title;
     }
 
-    h1, h2, h3 {
+    .footer_title, .footer_logo, h3 {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -93,7 +93,7 @@
       grid-area: form;
     }
 
-    h2 {
+    .footer_logo {
       display: block;
       grid-area: logo;
       width: 100%;
@@ -165,7 +165,7 @@
       }
     }
 
-    h2{
+    .footer_logo{
       min-height: 7rem;
     }
   }
