@@ -182,7 +182,7 @@ const titles = import.meta.glob<{ default: ImageMetadata }>('../../assets/perfum
 <section>
   <div class="container">
     <h2 class="section-title">Perfumes con Feromonas</h2>
-    <Tabs id="perfumes-tabs">
+    <Tabs id="perfumes-tabs" delay={0}>
       {data.map((perfume) => (
         <div slot="tab-element"
              data-label={perfume.title.charAt(0).toUpperCase() + perfume.title.slice(1).toLowerCase()}

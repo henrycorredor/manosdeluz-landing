@@ -11,14 +11,15 @@ document.children.map((child, index) => {
 
 interface Props {
   id: string
+  delay?: number
 }
 
-const {id, className} = Astro.props
+const {id, className, delay = 500} = Astro.props
 
 const classNames = className ? `kl-tabs ${className}` : 'kl-tabs'
 ---
 
-<div class=`kl-tabs_container ${classNames}` id={id}>
+<div class=`kl-tabs_container ${classNames}` id={id} data-delay={delay}>
     <div class="kl-tabs_nav">
         <slot name="nav-title"/>
         <div class="kl-tabs_nav_buttons">
@@ -118,7 +119,8 @@ const classNames = className ? `kl-tabs ${className}` : 'kl-tabs'
 
   const allKlTabContainers = document.querySelectorAll(".kl-tabs_container") as NodeListOf<HTMLDivElement>
   allKlTabContainers.forEach(container => {
-    const tabsController = new KlTabController(container, 500)
+    const delay = Number(container.dataset.delay ?? 500)
+    const tabsController = new KlTabController(container, delay)
     const tabsButton = container.querySelectorAll(".kl-tabs_nav_buttons_button-container") as NodeListOf<HTMLDivElement>
     const timeBars = Array.from(tabsButton).map(buttonContainer => buttonContainer.querySelector(".kl-tabs_nav_buttons_button-container_loader") as HTMLDivElement)
 
@@ -141,6 +143,11 @@ const classNames = className ? `kl-tabs ${className}` : 'kl-tabs'
       if (!timeBar) return
       timeBar.style.width = `${percent}%`
     })
+
+    if (delay <= 0) {
+      // sin autoplay: mostrar el primer tab activo con la barra llena
+      timeBars[0].style.width = "100%"
+    }
 
     tabsController.run()
 

@@ -59,6 +59,7 @@ export default class KlTabController {
 
   run() {
     if(!this.insideViewport) return
+    if(this.delay <= 0) return // sin autoplay: solo cambia de tab manualmente
     this.running = true
     this.runner()
   }
