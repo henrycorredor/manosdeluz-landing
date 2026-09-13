@@ -21,25 +21,24 @@ import Whatsapp from "../assets/social-whatsapp.svg"
     </div>
     <div class="nav-contact_whatsapp flex align-center">
       <Image src={Whatsapp} alt="Contáctanos en WhatsApp" />
-      <a href="https://wa.me/14752801913" target="_blank">+1 (475) 280 1913</a>
+      <a href="https://wa.me/14752801913" target="_blank"><span>+1 (475) 280 1913</span></a>
     </div>
   </div>
 </nav>
 
 <style lang="less">
   nav{
+    box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
-    width: calc(98% - 2.4rem);
-    position: fixed;
-    top: 1rem;
-    left: 50%;
+    width: 100%;
+    position: sticky;
+    top: 0;
     padding: .5rem 1.2rem;
-    border-radius: 100px;
     background: #575756;
-    transform: translateX(-50%);
     color: white;
     z-index: 10;
+    overflow-x: hidden;
   }
 
   .nav-contact{
